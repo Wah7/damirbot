@@ -8,7 +8,7 @@ client = commands.Bot(command_prefix="_")
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name="(_help) damie310 is a god"))
+    await client.change_presence(activity=discord.Game(name="(_help) DamieMK is a god"))
     print ("Bot is ready")
 
 client.remove_command("help")
@@ -18,9 +18,9 @@ client.remove_command("help")
 @client.command()
 async def help(ctx):
         embed = discord.Embed(color=000000, timestamp=ctx.message.created_at)
-        embed.set_author(name="DAMIR GUARD BY DAMIE310")
+        embed.set_author(name="CRIAEATED BY DamieMK#6767")
         embed.add_field(name="`nuke`", value="- does a totally real nuke on the server")
-        embed.add_field(name="`amogus`", value="- sussy")
+        embed.add_field(name="`amogus`", value="- sussy baka")
         embed.add_field(name="`serverinfo`", value="- shows server stats")
         embed.add_field(name="`membercount`", value="- tells you how many members this discord has")
         embed.add_field(name="`freeadmin`", value="- gives you admin")
@@ -36,9 +36,9 @@ async def help(ctx):
 async def helpadmin(ctx):
         embed = discord.Embed(color=000000, timestamp=ctx.message.created_at)
         embed.set_author(name="Admin Commands")
-        embed.add_field(name="`xban`", value="- bans a retard for you")
-        embed.add_field(name="`xunbanban`", value="- unbans a retard for you")
-        embed.add_field(name="`xkick`", value="- kicks a retard for you")
+        embed.add_field(name="`xban`", value="- bans a member for you")
+        embed.add_field(name="`xunbanban`", value="- unbans a member for you")
+        embed.add_field(name="`xkick`", value="- kicks a member for you")
         embed.add_field(name="`xrenameall`", value="- renames everyone in the server to whatever you choose")
         embed.set_image(url="")
         await ctx.send(embed=embed)
@@ -143,20 +143,20 @@ async def unban(ctx, *, member):
 
         if (user.name, user.discriminator) == (member_name, member_discriminator):
             await ctx.guild.unban(user)
-            await ctx.send(f"{member_name} has successfully been unbanned")
+            await ctx.send(f"{member_name} has been unbanned")
             return
 
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, member: discord.Member, *, reason=None):
     await member.kick(reason=reason)
-    await ctx.send(f"{discord.Member} has successfully been kicked for {reason}")
+    await ctx.send(f"{discord.Member} has been kicked for {reason}")
 
 @client.event
 async def on_command_error(ctx, error):
     print(f"{ctx.guild.name}:  {error}")
     if isinstance(error, commands.CommandError):
-        await ctx.send(f">>> **you did the command wrong retard** \n{error}")
+        await ctx.send(f">>> **you did the command wrong dumbass** \n{error}")
         
     
 client.run("nice try noob")
