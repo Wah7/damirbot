@@ -86,7 +86,7 @@ async def membercount(ctx):
 async def invite(ctx):
   embed = discord.Embed(
       title="Bot Invite Link",
-      description="https://discord.com/api/oauth2/authorize?client_id=851830341566988309&permissions=49152&scope=bot",
+      description="https://discord.com/api/oauth2/authorize?client_id=1027183503000997918&permissions=0&scope=bot",
       timestamp=ctx.message.created_at,
       color=discord.Color.red()
   )
