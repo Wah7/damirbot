@@ -4,11 +4,11 @@ import colorama
 from colorama import Fore
 import asyncio
 
-client = commands.Bot(command_prefix="_")
+client = commands.Bot(command_prefix=".")
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name="(_help) DamieMK is a god"))
+    await client.change_presence(activity=discord.Game(name="(.help) DamieMK is a god"))
     print ("Bot is ready")
 
 client.remove_command("help")
@@ -18,16 +18,17 @@ client.remove_command("help")
 @client.command()
 async def help(ctx):
         embed = discord.Embed(color=000000, timestamp=ctx.message.created_at)
-        embed.set_author(name="CRIAEATED BY DamieMK#6767")
-        embed.add_field(name="`nuke`", value="- does a totally real nuke on the server")
-        embed.add_field(name="`amogus`", value="- sussy baka")
-        embed.add_field(name="`serverinfo`", value="- shows server stats")
-        embed.add_field(name="`membercount`", value="- tells you how many members this discord has")
-        embed.add_field(name="`freeadmin`", value="- gives you admin")
-        embed.add_field(name="`invite`", value="- gives invite link if you want to invite this bot to your own server")
-        embed.add_field(name="`helpadmin`", value="- shows admin commands")
-        embed.add_field(name="`helpantishit`", value="- shows commands for preventing nukes, raids, and spam")
-        embed.add_field(name="`eightball`", value="- tells ur fortune or somethijng idk")
+        embed.set_author(name="Command List")
+        embed.add_field(name="`.nuke`", value="- does a totally real nuke on the server")
+        embed.add_field(name="`.amogus`", value="- sussy baka")
+        embed.add_field(name="`.serverinfo`", value="- shows server stats")
+        embed.add_field(name="`.membercount`", value="- tells you how many members this discord has")
+        embed.add_field(name="`.freeadmin`", value="- gives you admin")
+        embed.add_field(name="`.invite`", value="- gives invite link if you want to invite this bot to your own server")
+        embed.add_field(name="`.helpadmin`", value="- shows admin commands")
+        embed.add_field(name="`.helpantishit`", value="- shows commands for preventing nukes, raids, and spam")
+        embed.add_field(name="`.eightball`", value="- tells ur fortune or somethijng idk")
+        embed.add_field(name="`.info`", value="- shows info about this bot")
         embed.set_image(url="")
         await ctx.send(embed=embed)
 
@@ -36,10 +37,10 @@ async def help(ctx):
 async def helpadmin(ctx):
         embed = discord.Embed(color=000000, timestamp=ctx.message.created_at)
         embed.set_author(name="Admin Commands")
-        embed.add_field(name="`xban`", value="- bans a member for you")
-        embed.add_field(name="`xunbanban`", value="- unbans a member for you")
-        embed.add_field(name="`xkick`", value="- kicks a member for you")
-        embed.add_field(name="`xrenameall`", value="- renames everyone in the server to whatever you choose")
+        embed.add_field(name="`.ban`", value="- bans a member for you")
+        embed.add_field(name="`.unbanban`", value="- unbans a member for you")
+        embed.add_field(name="`.kick`", value="- kicks a member for you")
+        embed.add_field(name="`.renameall`", value="- renames everyone in the server to whatever you choose")
         embed.set_image(url="")
         await ctx.send(embed=embed)
 
@@ -113,6 +114,15 @@ async def nuke(ctx):
 @client.command()
 async def amogus(ctx):
     await ctx.send("_A M O G U S_ \nhttps://cdn.discordapp.com/attachments/804437210299760682/817524893351411743/video0.mp4")
+    
+@client.command()
+async def info(ctx):
+        embed = discord.Embed(color=000000, timestamp=ctx.message.created_at)
+        embed.set_author(name="BOT INFO")
+        embed.add_field(value="CREATED BY DamieMK#6767")
+        await ctx.send(embed=embed)
+        
+# ADMIN COMMANDS    
     
 @client.command()
 @commands.has_permissions(administrator=True)
